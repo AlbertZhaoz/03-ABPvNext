@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>_3._1_ABP.vNext框架介绍_ASPNETCoreApplication</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Application\_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Application.csproj" />
+    <ProjectReference Include="..\_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Domain.Tests\_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Domain.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+  </ItemGroup>
+
+</Project>

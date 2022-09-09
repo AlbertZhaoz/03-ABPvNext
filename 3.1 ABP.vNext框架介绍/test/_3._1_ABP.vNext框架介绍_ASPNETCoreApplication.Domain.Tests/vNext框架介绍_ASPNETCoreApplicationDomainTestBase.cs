@@ -1,0 +1,6 @@
+﻿namespace _3._1_ABP.vNext框架介绍_ASPNETCoreApplication;
+
+public abstract class vNext框架介绍_ASPNETCoreApplicationDomainTestBase : vNext框架介绍_ASPNETCoreApplicationTestBase<vNext框架介绍_ASPNETCoreApplicationDomainTestModule>
+{
+
+}

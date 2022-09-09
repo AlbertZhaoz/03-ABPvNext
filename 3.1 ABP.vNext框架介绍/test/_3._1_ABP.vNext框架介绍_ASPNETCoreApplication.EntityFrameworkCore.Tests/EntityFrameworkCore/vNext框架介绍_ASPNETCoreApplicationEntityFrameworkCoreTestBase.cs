@@ -1,0 +1,8 @@
+﻿using Volo.Abp;
+
+namespace _3._1_ABP.vNext框架介绍_ASPNETCoreApplication.EntityFrameworkCore;
+
+public abstract class vNext框架介绍_ASPNETCoreApplicationEntityFrameworkCoreTestBase : vNext框架介绍_ASPNETCoreApplicationTestBase<vNext框架介绍_ASPNETCoreApplicationEntityFrameworkCoreTestModule>
+{
+
+}

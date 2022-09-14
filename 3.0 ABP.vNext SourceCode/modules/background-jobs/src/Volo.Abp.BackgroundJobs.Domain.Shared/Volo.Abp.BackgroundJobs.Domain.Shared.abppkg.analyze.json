@@ -1,0 +1,11 @@
+{
+  "name": "Volo.Abp.BackgroundJobs.Domain.Shared",
+  "hash": "7be6cb28ee9246d901e9801978a44149",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.BackgroundJobs",
+      "contentType": "abpModule",
+      "name": "AbpBackgroundJobsDomainSharedModule"
+    }
+  ]
+}

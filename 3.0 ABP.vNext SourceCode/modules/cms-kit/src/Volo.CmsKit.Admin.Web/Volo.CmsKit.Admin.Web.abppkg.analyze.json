@@ -1,0 +1,11 @@
+{
+  "name": "Volo.CmsKit.Admin.Web",
+  "hash": "5f85ca165f250e4965434f76a73f0d24",
+  "contents": [
+    {
+      "namespace": "Volo.CmsKit.Admin.Web",
+      "contentType": "abpModule",
+      "name": "CmsKitAdminWebModule"
+    }
+  ]
+}

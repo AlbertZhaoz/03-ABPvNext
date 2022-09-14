@@ -1,0 +1,11 @@
+{
+  "name": "Volo.Abp.Account.Application.Contracts",
+  "hash": "63eee204db33a361b137b2cff508e53f",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.Account",
+      "contentType": "abpModule",
+      "name": "AbpAccountApplicationContractsModule"
+    }
+  ]
+}

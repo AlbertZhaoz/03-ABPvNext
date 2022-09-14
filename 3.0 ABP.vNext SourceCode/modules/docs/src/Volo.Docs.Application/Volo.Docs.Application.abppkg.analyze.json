@@ -1,0 +1,29 @@
+{
+  "name": "Volo.Docs.Application",
+  "hash": "87e3d3c4ba832643880025f927061542",
+  "contents": [
+    {
+      "namespace": "Volo.Docs",
+      "contentType": "abpModule",
+      "name": "DocsApplicationModule"
+    },
+    {
+      "namespace": "Volo.Docs.Projects",
+      "summary": null,
+      "implementingInterfaces": [
+        "Volo.Docs.Projects.IProjectAppService"
+      ],
+      "contentType": "applicationService",
+      "name": "ProjectAppService"
+    },
+    {
+      "namespace": "Volo.Docs.Documents",
+      "summary": null,
+      "implementingInterfaces": [
+        "Volo.Docs.Documents.IDocumentAppService"
+      ],
+      "contentType": "applicationService",
+      "name": "DocumentAppService"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Volo.Abp.TenantManagement.Domain",
+  "hash": "544cd2646fa5aefb1b053044cb6f05ac",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.TenantManagement",
+      "contentType": "abpModule",
+      "name": "AbpTenantManagementDomainModule"
+    },
+    {
+      "namespace": "Volo.Abp.TenantManagement",
+      "primaryKeyType": "Guid",
+      "summary": null,
+      "collectionProperties": [
+        "Volo.Abp.TenantManagement.TenantConnectionString"
+      ],
+      "navigationProperties": [],
+      "contentType": "aggregateRoot",
+      "name": "Tenant"
+    },
+    {
+      "namespace": "Volo.Abp.TenantManagement",
+      "summary": null,
+      "contentType": "domainService",
+      "name": "TenantManager"
+    },
+    {
+      "namespace": "Volo.Abp.TenantManagement",
+      "summary": null,
+      "entityAnalyzeModel": {
+        "namespace": "Volo.Abp.TenantManagement",
+        "primaryKeyType": "Guid",
+        "summary": null,
+        "collectionProperties": [
+          "Volo.Abp.TenantManagement.TenantConnectionString"
+        ],
+        "navigationProperties": [],
+        "contentType": "entity",
+        "name": "Tenant"
+      },
+      "contentType": "repositoryInterface",
+      "name": "ITenantRepository"
+    }
+  ]
+}

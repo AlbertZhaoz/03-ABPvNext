@@ -1,0 +1,26 @@
+{
+  "name": "Volo.Abp.PermissionManagement.Domain",
+  "hash": "db626b114b15f02f09d50652c81d3bb8",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.PermissionManagement",
+      "contentType": "abpModule",
+      "name": "AbpPermissionManagementDomainModule"
+    },
+    {
+      "namespace": "Volo.Abp.PermissionManagement",
+      "summary": null,
+      "entityAnalyzeModel": {
+        "namespace": "Volo.Abp.PermissionManagement",
+        "primaryKeyType": "Guid",
+        "summary": null,
+        "collectionProperties": [],
+        "navigationProperties": [],
+        "contentType": "entity",
+        "name": "PermissionGrant"
+      },
+      "contentType": "repositoryInterface",
+      "name": "IPermissionGrantRepository"
+    }
+  ]
+}

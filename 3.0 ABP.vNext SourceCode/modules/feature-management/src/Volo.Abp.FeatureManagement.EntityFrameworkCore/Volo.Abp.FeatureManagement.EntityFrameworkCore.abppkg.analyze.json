@@ -1,0 +1,24 @@
+{
+  "name": "Volo.Abp.FeatureManagement.EntityFrameworkCore",
+  "hash": "cc5257a0b2c407388aebb23e5dc96ee0",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.FeatureManagement.EntityFrameworkCore",
+      "contentType": "abpModule",
+      "name": "AbpFeatureManagementEntityFrameworkCoreModule"
+    },
+    {
+      "namespace": "Volo.Abp.FeatureManagement.EntityFrameworkCore",
+      "connectionStringName": "AbpFeatureManagement",
+      "databaseTables": [
+        {
+          "entityFullName": "Volo.Abp.FeatureManagement.FeatureValue",
+          "contentType": "databaseTable",
+          "name": "AbpFeatureValues"
+        }
+      ],
+      "contentType": "efCoreDbContext",
+      "name": "FeatureManagementDbContext"
+    }
+  ]
+}

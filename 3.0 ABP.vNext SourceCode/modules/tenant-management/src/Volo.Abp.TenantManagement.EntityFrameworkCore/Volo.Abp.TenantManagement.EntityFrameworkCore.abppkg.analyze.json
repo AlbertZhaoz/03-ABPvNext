@@ -1,0 +1,29 @@
+{
+  "name": "Volo.Abp.TenantManagement.EntityFrameworkCore",
+  "hash": "cc176b58ce26ec8ca281d7db5f8b55df",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.TenantManagement.EntityFrameworkCore",
+      "contentType": "abpModule",
+      "name": "AbpTenantManagementEntityFrameworkCoreModule"
+    },
+    {
+      "namespace": "Volo.Abp.TenantManagement.EntityFrameworkCore",
+      "connectionStringName": "AbpTenantManagement",
+      "databaseTables": [
+        {
+          "entityFullName": "Volo.Abp.TenantManagement.Tenant",
+          "contentType": "databaseTable",
+          "name": "AbpTenants"
+        },
+        {
+          "entityFullName": "Volo.Abp.TenantManagement.TenantConnectionString",
+          "contentType": "databaseTable",
+          "name": "AbpTenantConnectionStrings"
+        }
+      ],
+      "contentType": "efCoreDbContext",
+      "name": "TenantManagementDbContext"
+    }
+  ]
+}

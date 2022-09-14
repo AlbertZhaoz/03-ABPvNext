@@ -1,0 +1,11 @@
+{
+  "name": "Volo.Abp.SettingManagement.HttpApi",
+  "hash": "59743dcbb13f1d2f74de5cd7b8c7a201",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.SettingManagement",
+      "contentType": "abpModule",
+      "name": "AbpSettingManagementHttpApiModule"
+    }
+  ]
+}

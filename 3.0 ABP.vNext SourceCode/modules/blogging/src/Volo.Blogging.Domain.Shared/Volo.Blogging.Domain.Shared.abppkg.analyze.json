@@ -1,0 +1,11 @@
+{
+  "name": "Volo.Blogging.Domain.Shared",
+  "hash": "5c72d38b48fd549c1e4d37eb5f4a5f8e",
+  "contents": [
+    {
+      "namespace": "Volo.Blogging",
+      "contentType": "abpModule",
+      "name": "BloggingDomainSharedModule"
+    }
+  ]
+}

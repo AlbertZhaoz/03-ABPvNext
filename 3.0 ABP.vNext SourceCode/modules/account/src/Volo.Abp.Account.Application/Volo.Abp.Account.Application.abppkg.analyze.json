@@ -1,0 +1,29 @@
+{
+  "name": "Volo.Abp.Account.Application",
+  "hash": "9607ce81498fab564ea4a3681c15f72d",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.Account",
+      "contentType": "abpModule",
+      "name": "AbpAccountApplicationModule"
+    },
+    {
+      "namespace": "Volo.Abp.Account",
+      "summary": null,
+      "implementingInterfaces": [
+        "Volo.Abp.Account.IAccountAppService"
+      ],
+      "contentType": "applicationService",
+      "name": "AccountAppService"
+    },
+    {
+      "namespace": "Volo.Abp.Account",
+      "summary": null,
+      "implementingInterfaces": [
+        "Volo.Abp.Account.IProfileAppService"
+      ],
+      "contentType": "applicationService",
+      "name": "ProfileAppService"
+    }
+  ]
+}

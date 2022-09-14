@@ -1,0 +1,11 @@
+{
+  "name": "Volo.Abp.Identity.Web",
+  "hash": "28144e19882c7781eaf09b39ce8a320b",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.Identity.Web",
+      "contentType": "abpModule",
+      "name": "AbpIdentityWebModule"
+    }
+  ]
+}

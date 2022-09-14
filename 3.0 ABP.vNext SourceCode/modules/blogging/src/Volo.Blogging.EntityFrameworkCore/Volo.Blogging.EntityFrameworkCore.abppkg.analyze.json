@@ -1,0 +1,49 @@
+{
+  "name": "Volo.Blogging.EntityFrameworkCore",
+  "hash": "28d4b0828f47b8b4e6cef70a5879915f",
+  "contents": [
+    {
+      "namespace": "Volo.Blogging.EntityFrameworkCore",
+      "contentType": "abpModule",
+      "name": "BloggingEntityFrameworkCoreModule"
+    },
+    {
+      "namespace": "Volo.Blogging.EntityFrameworkCore",
+      "connectionStringName": "Blogging",
+      "databaseTables": [
+        {
+          "entityFullName": "Volo.Blogging.Blogs.Blog",
+          "contentType": "databaseTable",
+          "name": "BlgBlogs"
+        },
+        {
+          "entityFullName": "Volo.Blogging.Comments.Comment",
+          "contentType": "databaseTable",
+          "name": "BlgComments"
+        },
+        {
+          "entityFullName": "Volo.Blogging.Posts.Post",
+          "contentType": "databaseTable",
+          "name": "BlgPosts"
+        },
+        {
+          "entityFullName": "Volo.Blogging.Posts.PostTag",
+          "contentType": "databaseTable",
+          "name": "BlgPostTags"
+        },
+        {
+          "entityFullName": "Volo.Blogging.Tagging.Tag",
+          "contentType": "databaseTable",
+          "name": "BlgTags"
+        },
+        {
+          "entityFullName": "Volo.Blogging.Users.BlogUser",
+          "contentType": "databaseTable",
+          "name": "BlgUsers"
+        }
+      ],
+      "contentType": "efCoreDbContext",
+      "name": "BloggingDbContext"
+    }
+  ]
+}

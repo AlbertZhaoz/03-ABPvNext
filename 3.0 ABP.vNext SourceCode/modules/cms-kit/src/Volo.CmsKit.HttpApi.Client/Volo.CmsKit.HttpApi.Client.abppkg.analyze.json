@@ -1,0 +1,11 @@
+{
+  "name": "Volo.CmsKit.HttpApi.Client",
+  "hash": "dac3747019bc31633a80784616bdbe61",
+  "contents": [
+    {
+      "namespace": "Volo.CmsKit",
+      "contentType": "abpModule",
+      "name": "CmsKitHttpApiClientModule"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Volo.Abp.BackgroundJobs.EntityFrameworkCore",
+  "hash": "47c087243281aea34d16f03acf5254cd",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.BackgroundJobs.EntityFrameworkCore",
+      "contentType": "abpModule",
+      "name": "AbpBackgroundJobsEntityFrameworkCoreModule"
+    },
+    {
+      "namespace": "Volo.Abp.BackgroundJobs.EntityFrameworkCore",
+      "connectionStringName": "AbpBackgroundJobs",
+      "databaseTables": [
+        {
+          "entityFullName": "Volo.Abp.BackgroundJobs.BackgroundJobRecord",
+          "contentType": "databaseTable",
+          "name": "AbpBackgroundJobs"
+        }
+      ],
+      "contentType": "efCoreDbContext",
+      "name": "BackgroundJobsDbContext"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Volo.Abp.SettingManagement.Domain.Shared",
+  "hash": "02864f881f165fef01949fce1324f4ea",
+  "contents": [
+    {
+      "namespace": "Volo.Abp.SettingManagement",
+      "contentType": "abpModule",
+      "name": "AbpSettingManagementDomainSharedModule"
+    },
+    {
+      "valueType": "ToggleStringValueType",
+      "defaultValue": "true",
+      "displayName": "Enable setting management",
+      "description": "Enable setting management system in the application.",
+      "isAvailableToHost": true,
+      "isVisibleToClients": true,
+      "contentType": "feature",
+      "name": "SettingManagement.Enable"
+    },
+    {
+      "valueType": "ToggleStringValueType",
+      "defaultValue": "false",
+      "displayName": "Allow changing email settings.",
+      "description": null,
+      "isAvailableToHost": false,
+      "isVisibleToClients": true,
+      "contentType": "feature",
+      "name": "SettingManagement.AllowChangingEmailSettings"
+    }
+  ]
+}

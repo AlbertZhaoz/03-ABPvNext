@@ -251,15 +251,15 @@ paket-files/
 .idea/
 *.sln.iml
 
-# vNext框架介绍_ASPNETCoreApplication
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Web/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Web.Host/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.IdentityServer/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.HttpApi.Host/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.HttpApi.HostWithIds/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.DbMigrator/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Blazor.Server/Logs/*
-src/_3._1_ABP.vNext框架介绍_ASPNETCoreApplication.Blazor.Server.Tiered/Logs/*
+# vNext框架介绍
+src/_3._1_ABP.vNext框架介绍.Web/Logs/*
+src/_3._1_ABP.vNext框架介绍.Web.Host/Logs/*
+src/_3._1_ABP.vNext框架介绍.IdentityServer/Logs/*
+src/_3._1_ABP.vNext框架介绍.HttpApi.Host/Logs/*
+src/_3._1_ABP.vNext框架介绍.HttpApi.HostWithIds/Logs/*
+src/_3._1_ABP.vNext框架介绍.DbMigrator/Logs/*
+src/_3._1_ABP.vNext框架介绍.Blazor.Server/Logs/*
+src/_3._1_ABP.vNext框架介绍.Blazor.Server.Tiered/Logs/*
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*

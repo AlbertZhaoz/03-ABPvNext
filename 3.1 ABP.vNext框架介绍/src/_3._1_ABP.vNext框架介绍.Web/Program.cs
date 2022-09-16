@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
+using Volo.Abp.Modularity.PlugIns;
 
 namespace _3._1_ABP.vNext框架介绍.Web;
 

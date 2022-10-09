@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_3.3 ABP.vNext模块化.Console", "src\_3.3 ABP.vNext模块化.Console\_3.3 ABP.vNext模块化.Console.csproj", "{49AA20D7-0651-4C6E-9764-3211BD9F7391}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49AA20D7-0651-4C6E-9764-3211BD9F7391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49AA20D7-0651-4C6E-9764-3211BD9F7391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49AA20D7-0651-4C6E-9764-3211BD9F7391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49AA20D7-0651-4C6E-9764-3211BD9F7391}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

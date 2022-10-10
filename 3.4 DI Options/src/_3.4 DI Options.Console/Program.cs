@@ -7,9 +7,9 @@ using (var app = AbpApplicationFactory.Create<AppModule>())
     app.Initialize();
 
     var services = app.ServiceProvider.GetServices<IAlbertService>();
-    foreach (var VARIABLE in services)
+    foreach (var variable in services)
     {
-        Console.WriteLine(VARIABLE.ToString());
+        Console.WriteLine(variable.ToString());
     }
 
     var albertService = app.ServiceProvider.GetRequiredService<IAlbertService>();

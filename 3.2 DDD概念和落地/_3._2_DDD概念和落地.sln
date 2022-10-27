@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._2_DDD概念和落地.Domain", "src\_3._2_DDD概念和落地.Domain\_3._2_DDD概念和落地.Domain.csproj", "{554AD327-6DBA-4F8F-96F8-81CE7A0C863F}"
 EndProject
@@ -37,11 +37,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._2_DDD概念和落地.Ht
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._2_DDD概念和落地.DbMigrator", "src\_3._2_DDD概念和落地.DbMigrator\_3._2_DDD概念和落地.DbMigrator.csproj", "{AA94D832-1CCC-4715-95A9-A483F23A1A5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Novel.Domain", "src\Albert.Novel.Domain\Albert.Novel.Domain.csproj", "{7B7CE3B9-94BB-4182-86AE-6B5F8606B286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Novel.Domain", "src\Albert.Novel.Domain\Albert.Novel.Domain.csproj", "{7B7CE3B9-94BB-4182-86AE-6B5F8606B286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Novel.EF Core", "src\Albert.Novel.EF Core\Albert.Novel.EF Core.csproj", "{254F3042-D03D-4AD3-88D5-5361F69BC7AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Novel.EF Core", "src\Albert.Novel.EF Core\Albert.Novel.EF Core.csproj", "{254F3042-D03D-4AD3-88D5-5361F69BC7AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Novel.TestBase", "test\Albert.Novel.TestBase\Albert.Novel.TestBase.csproj", "{6734CEBF-15C9-4305-A823-AF72BCD78BBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Novel.TestBase", "test\Albert.Novel.TestBase\Albert.Novel.TestBase.csproj", "{6734CEBF-15C9-4305-A823-AF72BCD78BBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Novel.EF Core.Test", "test\Albert.Novel.EF Core.Test\Albert.Novel.EF Core.Test.csproj", "{D4A912B5-0EB2-4F03-95E5-B41A9DCCC292}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +123,10 @@ Global
 		{6734CEBF-15C9-4305-A823-AF72BCD78BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6734CEBF-15C9-4305-A823-AF72BCD78BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6734CEBF-15C9-4305-A823-AF72BCD78BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A912B5-0EB2-4F03-95E5-B41A9DCCC292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A912B5-0EB2-4F03-95E5-B41A9DCCC292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A912B5-0EB2-4F03-95E5-B41A9DCCC292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A912B5-0EB2-4F03-95E5-B41A9DCCC292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +150,7 @@ Global
 		{7B7CE3B9-94BB-4182-86AE-6B5F8606B286} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{254F3042-D03D-4AD3-88D5-5361F69BC7AE} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{6734CEBF-15C9-4305-A823-AF72BCD78BBB} = {04DBDB01-70F4-4E06-B468-8F87850B22BE}
+		{D4A912B5-0EB2-4F03-95E5-B41A9DCCC292} = {04DBDB01-70F4-4E06-B468-8F87850B22BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}

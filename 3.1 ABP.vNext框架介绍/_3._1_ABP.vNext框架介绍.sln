@@ -37,15 +37,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._1_ABP.vNext框架介绍
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._1_ABP.vNext框架介绍.DbMigrator", "src\_3._1_ABP.vNext框架介绍.DbMigrator\_3._1_ABP.vNext框架介绍.DbMigrator.csproj", "{AA94D832-1CCC-4715-95A9-A483F23A1A5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_3._1_ABP.vNext框架介绍.Console", "src\_3._1_ABP.vNext框架介绍.Console\_3._1_ABP.vNext框架介绍.Console.csproj", "{5935D401-7522-49A2-AE09-AC48406ED9E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._1_ABP.vNext框架介绍.Console", "src\_3._1_ABP.vNext框架介绍.Console\_3._1_ABP.vNext框架介绍.Console.csproj", "{5935D401-7522-49A2-AE09-AC48406ED9E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_3._1_ABP.vNext框架介绍.ConsolePlug", "src\_3._1_ABP.vNext框架介绍.ConsolePlug\_3._1_ABP.vNext框架介绍.ConsolePlug.csproj", "{9B059B22-0B46-4889-8949-EA5604756B95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_3._1_ABP.vNext框架介绍.ConsolePlug", "src\_3._1_ABP.vNext框架介绍.ConsolePlug\_3._1_ABP.vNext框架介绍.ConsolePlug.csproj", "{9B059B22-0B46-4889-8949-EA5604756B95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Abp.Console", "src\Albert.Abp.Console\Albert.Abp.Console.csproj", "{5589F0D3-DAAC-4559-928D-353BAAF9864E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Abp.Console", "src\Albert.Abp.Console\Albert.Abp.Console.csproj", "{5589F0D3-DAAC-4559-928D-353BAAF9864E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Abp.Console.Plugin", "src\Albert.Abp.Console.Plugin\Albert.Abp.Console.Plugin.csproj", "{61A24015-9277-4C55-9494-EBA723F72C9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Abp.Console.Plugin", "src\Albert.Abp.Console.Plugin\Albert.Abp.Console.Plugin.csproj", "{61A24015-9277-4C55-9494-EBA723F72C9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albert.Abp.Console.Plugin.Abstract", "src\Albert.Abp.Console.Plugin.Abstract\Albert.Abp.Console.Plugin.Abstract.csproj", "{8E8B748A-A560-4611-AFE7-3AC6A4977E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Abp.Console.Plugin.Abstract", "src\Albert.Abp.Console.Plugin.Abstract\Albert.Abp.Console.Plugin.Abstract.csproj", "{8E8B748A-A560-4611-AFE7-3AC6A4977E09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Albert.Abp.WebApi", "src\Albert.Abp.WebApi\Albert.Abp.WebApi.csproj", "{A9CC98AD-9C9E-4266-A83C-4B18C96621E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,10 @@ Global
 		{8E8B748A-A560-4611-AFE7-3AC6A4977E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E8B748A-A560-4611-AFE7-3AC6A4977E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E8B748A-A560-4611-AFE7-3AC6A4977E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9CC98AD-9C9E-4266-A83C-4B18C96621E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9CC98AD-9C9E-4266-A83C-4B18C96621E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9CC98AD-9C9E-4266-A83C-4B18C96621E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9CC98AD-9C9E-4266-A83C-4B18C96621E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,6 +164,7 @@ Global
 		{5589F0D3-DAAC-4559-928D-353BAAF9864E} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{61A24015-9277-4C55-9494-EBA723F72C9A} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{8E8B748A-A560-4611-AFE7-3AC6A4977E09} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{A9CC98AD-9C9E-4266-A83C-4B18C96621E4} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28315BFD-90E7-4E14-A2EA-F3D23AF4126F}

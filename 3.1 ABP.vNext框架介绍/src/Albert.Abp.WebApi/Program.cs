@@ -1,5 +1,4 @@
 using Albert.Abp.WebApi;
-using Autofac.Extensions.DependencyInjection;
 using Volo.Abp;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddApplication<AppModule>(opt=>
 {
-    // 用来替换默认配置
+    // 鏇挎崲榛樿閰嶇疆
     opt.Services.ReplaceConfiguration(builder.Configuration);
-    // 启用 Autofac
+    // 浣跨敤 Autofac
     opt.UseAutofac();
 });
 
@@ -17,6 +16,6 @@ builder.Services.AddApplication<AppModule>(opt=>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-// 使用 Abp的初始化使用中间件
+// 涓棿浠跺垵濮嬪寲浣跨敤
 app.InitializeApplication();
 app.Run();

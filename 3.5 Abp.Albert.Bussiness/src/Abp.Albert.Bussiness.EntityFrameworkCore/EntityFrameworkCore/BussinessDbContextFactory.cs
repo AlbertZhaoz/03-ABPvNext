@@ -16,7 +16,6 @@ public class BussinessDbContextFactory : IDesignTimeDbContextFactory<BussinessDb
 
         var configuration = BuildConfiguration();
 
-        // 这边使用了 UseMySql 来进行数据库连接
         var builder = new DbContextOptionsBuilder<BussinessDbContext>()
             .UseMySql(configuration.GetConnectionString("Default"), MySqlServerVersion.LatestSupportedServerVersion);
 

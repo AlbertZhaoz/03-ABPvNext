@@ -11,6 +11,9 @@ public class BussinessPermissionDefinitionProvider : PermissionDefinitionProvide
         var myGroup = context.AddGroup(BussinessPermissions.GroupName);
         //Define your own permissions here. Example:
         //myGroup.AddPermission(BussinessPermissions.MyPermission1, L("Permission:MyPermission1"));
+        // Product有一个默认的权限和一个子权限
+        myGroup.AddPermission(BussinessPermissions.Product.Default)
+            .AddChild(BussinessPermissions.Product.DefaultSelectByTitle);
     }
 
     private static LocalizableString L(string name)

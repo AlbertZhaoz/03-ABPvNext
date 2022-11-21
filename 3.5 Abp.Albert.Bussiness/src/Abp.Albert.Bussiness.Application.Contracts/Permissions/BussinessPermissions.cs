@@ -6,4 +6,9 @@ public static class BussinessPermissions
 
     //Add your own permission names. Example:
     //public const string MyPermission1 = GroupName + ".MyPermission1";
+    public static class Product
+    {
+        public const string Default = GroupName + ".Product";
+        public const string DefaultSelectByTitle = Default + ".DefaultSelectByTitle";
+    }
 }

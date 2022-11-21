@@ -12,7 +12,6 @@ public class BussinessApplicationAutoMapperProfile : Profile
         /* You can configure your AutoMapper mapping configuration here.
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
-
         // 从仓储层查询出来映射到前端 DTO
         CreateMap<Product, PagedAndSortedResultRequestDto>();
         CreateMap<Product, ProductDto>();

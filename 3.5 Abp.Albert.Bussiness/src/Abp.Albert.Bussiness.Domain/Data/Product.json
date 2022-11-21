@@ -1,0 +1,62 @@
+[
+  {
+    "Id": "3a07a7be-db03-7537-b518-faae3c94bd47",
+    "ProductCode": "001",
+    "ProductUrl": "http://www.001product.com",
+    "ProductTitle": "001Title",
+    "ProductDescription": "001Description",
+    "ProductVirtualprice": 100.0,
+    "ProductPrice": 100.0,
+    "ProductSort": 1,
+    "ProductSold": 1,
+    "ProductStock": 10,
+    "ProductStatus": "1",
+    "ProductImages": [
+      {
+        "ImageSort": 1,
+        "ImageStatus": "1",
+        "ImageUrl": "http://www.001product1image.com"
+      },
+      {
+        "ImageSort": 2,
+        "ImageStatus": "1",
+        "ImageUrl": "http://www.002product1image.com"
+      },
+      {
+        "ImageSort": 3,
+        "ImageStatus": "1",
+        "ImageUrl": "http://www.003product1image.com"
+      }
+    ]
+  },
+  {
+    "Id": "3a07a7bf-9985-afc1-acda-795314ed151b",
+    "ProductCode": "002",
+    "ProductUrl": "http://www.002product.com",
+    "ProductTitle": "002Title",
+    "ProductDescription": "002Description",
+    "ProductVirtualprice": 200.0,
+    "ProductPrice": 200.0,
+    "ProductSort": 2,
+    "ProductSold": 2,
+    "ProductStock": 20,
+    "ProductStatus": "1",
+    "ProductImages": [
+      {
+        "ImageSort": 1,
+        "ImageStatus": "1",
+        "ImageUrl": "http://www.001product2image.com"
+      },
+      {
+        "ImageSort": 2,
+        "ImageStatus": "1",
+        "ImageUrl": "http://www.002product2image.com"
+      },
+      {
+        "ImageSort": 3,
+        "ImageStatus": "1",
+        "ImageUrl": "http://www.003product2image.com"
+      }
+    ]
+  }
+]

@@ -17,9 +17,8 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
 namespace Abp.Albert.Bussiness.EntityFrameworkCore;
 
-//[ReplaceDbContext(typeof(IIdentityDbContext))]
-//[ReplaceDbContext(typeof(ITenantManagementDbContext))]
-// 使用默认连接字符串，你也在这个特性下指定，尤其是在多数据库的情况下
+[ReplaceDbContext(typeof(IIdentityDbContext))]
+[ReplaceDbContext(typeof(ITenantManagementDbContext))]
 [ConnectionStringName("Default")]
 public class BussinessDbContext :
     AbpDbContext<BussinessDbContext>,
@@ -27,9 +26,6 @@ public class BussinessDbContext :
     ITenantManagementDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
-
-    public DbSet<Product> Products { get; set; }
-
 
     #region Entities from the modules
 
@@ -57,6 +53,7 @@ public class BussinessDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     #endregion
+    public DbSet<Product> Products { get; set; }
 
     public BussinessDbContext(DbContextOptions<BussinessDbContext> options)
         : base(options)
@@ -79,9 +76,7 @@ public class BussinessDbContext :
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
 
-        /* Configure your own tables/entities inside here
-         maybe they're rebuilded.
-         */
+        /* Configure your own tables/entities inside here */
         builder.Entity<Product>(b =>
         {
             //b.ToTable("Product");
@@ -89,10 +84,10 @@ public class BussinessDbContext :
             b.Property(x => x.ProductTitle).HasMaxLength(ProductConst.MaxProductTitleLength);
             b.Property(x => x.ProductDescription).HasMaxLength(ProductConst.MaxProductDescriptionLength);
             // 配置一对多表关系
-            b.HasMany(p => p.ProductImages).WithOne().HasForeignKey(pi => pi.ProductId).IsRequired();
+            // 外键，级联删除
+            b.HasMany(p => p.ProductImages).WithOne().HasForeignKey(pi => pi.ProductId).OnDelete(DeleteBehavior.Cascade).IsRequired();
             //...
         });
-
         //builder.Entity<YourEntity>(b =>
         //{
         //    b.ToTable(BussinessConsts.DbTablePrefix + "YourEntities", BussinessConsts.DbSchema);

@@ -10,6 +10,8 @@ namespace Abp.Albert.Bussiness.Products
         // 根据商品标题查询商品
         Task<IEnumerable<Product>> GetProductByNameAsync(string ProductTitle);
         // 查询所有商品和商品图片
-        Task<IEnumerable<Product>> GetAllProducts();
+        Task<IEnumerable<Product>> GetProductListAsync();
+        // 插入模拟数据
+        Task InsertMockData();
     }
 }

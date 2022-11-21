@@ -2,31 +2,31 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Medallion.Threading;
-using Medallion.Threading.Redis;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Abp.Albert.Bussiness.EntityFrameworkCore;
 using Abp.Albert.Bussiness.MultiTenancy;
-using StackExchange.Redis;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
 using Microsoft.OpenApi.Models;
+using OpenIddict.Validation.AspNetCore;
 using Volo.Abp;
+using Volo.Abp.Account;
+using Volo.Abp.Account.Web;
+using Volo.Abp.AspNetCore.MultiTenancy;
 using Volo.Abp.AspNetCore.Mvc;
-using Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy;
+using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
-using Volo.Abp.Caching;
-using Volo.Abp.Caching.StackExchangeRedis;
-using Volo.Abp.DistributedLocking;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
+using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 
 namespace Abp.Albert.Bussiness;
@@ -34,36 +34,73 @@ namespace Abp.Albert.Bussiness;
 [DependsOn(
     typeof(BussinessHttpApiModule),
     typeof(AbpAutofacModule),
-    typeof(AbpCachingStackExchangeRedisModule),
-    typeof(AbpDistributedLockingModule),
-    typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
+    typeof(AbpAspNetCoreMultiTenancyModule),
     typeof(BussinessApplicationModule),
     typeof(BussinessEntityFrameworkCoreModule),
+    typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
+    typeof(AbpAccountWebOpenIddictModule),
     typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpSwashbuckleModule)
 )]
 public class BussinessHttpApiHostModule : AbpModule
 {
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        PreConfigure<OpenIddictBuilder>(builder =>
+        {
+            builder.AddValidation(options =>
+            {
+                options.AddAudiences("Bussiness");
+                options.UseLocalServer();
+                options.UseAspNetCore();
+            });
+        });
+    }
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var configuration = context.Services.GetConfiguration();
         var hostingEnvironment = context.Services.GetHostingEnvironment();
 
-        // 自动 API 控制器
+        ConfigureAuthentication(context);
+        ConfigureBundles();
+        ConfigureUrls(configuration);
         ConfigureConventionalControllers();
-        ConfigureAuthentication(context, configuration);
         ConfigureLocalization();
-        ConfigureCache(configuration);
         ConfigureVirtualFileSystem(context);
-        ConfigureDataProtection(context, configuration, hostingEnvironment);
-        ConfigureDistributedLocking(context, configuration);
         ConfigureCors(context, configuration);
         ConfigureSwaggerServices(context, configuration);
     }
 
-    private void ConfigureCache(IConfiguration configuration)
+    private void ConfigureAuthentication(ServiceConfigurationContext context)
     {
-        Configure<AbpDistributedCacheOptions>(options => { options.KeyPrefix = "Bussiness:"; });
+        context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+    }
+
+    private void ConfigureBundles()
+    {
+        Configure<AbpBundlingOptions>(options =>
+        {
+            options.StyleBundles.Configure(
+                LeptonXLiteThemeBundles.Styles.Global,
+                bundle =>
+                {
+                    bundle.AddFiles("/global-styles.css");
+                }
+            );
+        });
+    }
+
+    private void ConfigureUrls(IConfiguration configuration)
+    {
+        Configure<AppUrlOptions>(options =>
+        {
+            options.Applications["MVC"].RootUrl = configuration["App:SelfUrl"];
+            options.RedirectAllowedUrls.AddRange(configuration["App:RedirectAllowedUrls"].Split(','));
+
+            options.Applications["Angular"].RootUrl = configuration["App:ClientUrl"];
+            options.Applications["Angular"].Urls[AccountUrlNames.PasswordReset] = "account/reset-password";
+        });
     }
 
     private void ConfigureVirtualFileSystem(ServiceConfigurationContext context)
@@ -94,23 +131,8 @@ public class BussinessHttpApiHostModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-            options.ConventionalControllers.Create(typeof(BussinessApplicationModule).Assembly, options =>
-            {
-                // 配置根路径的显示名称
-                options.RootPath = "Abp.Albert.Bussiness";
-            });
+            options.ConventionalControllers.Create(typeof(BussinessApplicationModule).Assembly);
         });
-    }
-
-    private void ConfigureAuthentication(ServiceConfigurationContext context, IConfiguration configuration)
-    {
-        context.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.Authority = configuration["AuthServer:Authority"];
-                options.RequireHttpsMetadata = Convert.ToBoolean(configuration["AuthServer:RequireHttpsMetadata"]);
-                options.Audience = "Bussiness";
-            });
     }
 
     private static void ConfigureSwaggerServices(ServiceConfigurationContext context, IConfiguration configuration)
@@ -119,7 +141,7 @@ public class BussinessHttpApiHostModule : AbpModule
             configuration["AuthServer:Authority"],
             new Dictionary<string, string>
             {
-                { "Bussiness", "Bussiness API" }
+                    {"Bussiness", "Bussiness API"}
             },
             options =>
             {
@@ -142,9 +164,9 @@ public class BussinessHttpApiHostModule : AbpModule
             options.Languages.Add(new LanguageInfo("hi", "hi", "Hindi", "in"));
             options.Languages.Add(new LanguageInfo("is", "is", "Icelandic", "is"));
             options.Languages.Add(new LanguageInfo("it", "it", "Italiano", "it"));
-            options.Languages.Add(new LanguageInfo("ro-RO", "ro-RO", "Română"));
             options.Languages.Add(new LanguageInfo("hu", "hu", "Magyar"));
             options.Languages.Add(new LanguageInfo("pt-BR", "pt-BR", "Português"));
+            options.Languages.Add(new LanguageInfo("ro-RO", "ro-RO", "Română"));
             options.Languages.Add(new LanguageInfo("ru", "ru", "Русский"));
             options.Languages.Add(new LanguageInfo("sk", "sk", "Slovak"));
             options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
@@ -156,37 +178,12 @@ public class BussinessHttpApiHostModule : AbpModule
         });
     }
 
-    private void ConfigureDataProtection(
-        ServiceConfigurationContext context,
-        IConfiguration configuration,
-        IWebHostEnvironment hostingEnvironment)
-    {
-        var dataProtectionBuilder = context.Services.AddDataProtection().SetApplicationName("Bussiness");
-        if (!hostingEnvironment.IsDevelopment())
-        {
-            var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
-            dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "Bussiness-Protection-Keys");
-        }
-    }
-
-    private void ConfigureDistributedLocking(
-        ServiceConfigurationContext context,
-        IConfiguration configuration)
-    {
-        context.Services.AddSingleton<IDistributedLockProvider>(sp =>
-        {
-            var connection = ConnectionMultiplexer
-                .Connect(configuration["Redis:Configuration"]);
-            return new RedisDistributedSynchronizationProvider(connection.GetDatabase());
-        });
-    }
-
     private void ConfigureCors(ServiceConfigurationContext context, IConfiguration configuration)
     {
         context.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(builder =>
-            {
+               {
                 builder
                     .WithOrigins(
                         configuration["App:CorsOrigins"]
@@ -214,32 +211,39 @@ public class BussinessHttpApiHostModule : AbpModule
         }
 
         app.UseAbpRequestLocalization();
+
+        if (!env.IsDevelopment())
+        {
+            app.UseErrorPage();
+        }
+
         app.UseCorrelationId();
         app.UseStaticFiles();
         app.UseRouting();
         app.UseCors();
         app.UseAuthentication();
+        app.UseAbpOpenIddictValidation();
 
         if (MultiTenancyConsts.IsEnabled)
         {
             app.UseMultiTenancy();
         }
 
+        app.UseUnitOfWork();
         app.UseAuthorization();
 
         app.UseSwagger();
-        app.UseAbpSwaggerUI(options =>
+        app.UseAbpSwaggerUI(c =>
         {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Bussiness API");
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bussiness API");
 
-            var configuration = context.GetConfiguration();
-            options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            options.OAuthScopes("Bussiness");
+            var configuration = context.ServiceProvider.GetRequiredService<IConfiguration>();
+            c.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+            c.OAuthScopes("Bussiness");
         });
 
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
-        app.UseUnitOfWork();
         app.UseConfiguredEndpoints();
     }
 }

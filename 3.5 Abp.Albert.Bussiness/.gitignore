@@ -253,10 +253,10 @@ paket-files/
 
 # Bussiness
 src/Abp.Albert.Bussiness.Web/Logs/*
-src/Abp.Albert.Bussiness.Web/Logs/*
+src/Abp.Albert.Bussiness.Web.Host/Logs/*
 src/Abp.Albert.Bussiness.AuthServer/Logs/*
 src/Abp.Albert.Bussiness.HttpApi.Host/Logs/*
-src/Abp.Albert.Bussiness.HttpApi.HostWithIds/Logs/*
+src/Abp.Albert.Bussiness.HttpApi.Host/Logs/*
 src/Abp.Albert.Bussiness.DbMigrator/Logs/*
 src/Abp.Albert.Bussiness.Blazor.Server/Logs/*
 src/Abp.Albert.Bussiness.Blazor.Server.Tiered/Logs/*
